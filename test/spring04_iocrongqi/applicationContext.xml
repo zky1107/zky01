@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"
+    >
+  <!--这个是 一个 xml 文件，也就是 容器 ，用来 管理很多对象的，
+  何为管理，即 把对象的 诞生，使用，死亡-->
+    <!--id 唯一， class 指向 类的全名称，带上包名的-->
+    <bean id="date" class="java.util.Date"></bean>
+
+    <!--默认是单例模式，如何变为原型模式呢？ scope="prototype" 是原型-->
+    <!--<bean id="Pc" class="spring04_iocrongqi.Pc scope="prototype""></bean>-->
+    <!--测试对象的生命周期 需要 单例模式-->
+    <bean id="Pc" class="spring04_iocrongqi.Pc" scope="prototype" init-method="initShow" destroy-method="destroyObj"></bean>
+</beans>
